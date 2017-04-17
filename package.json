@@ -1,0 +1,25 @@
+{
+  "name": "simple-library",
+  "version": "1.0.0",
+  "description": "Simple Library by DK is for Angularjs. Collection of simple things to use.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexysbike/simple-library.git"
+  },
+  "keywords": [
+    "angularjs",
+    "helper",
+    "loading",
+    "dk"
+  ],
+  "author": "Alexys Gonzalez (DK)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexysbike/simple-library/issues"
+  },
+  "homepage": "https://github.com/alexysbike/simple-library#readme"
+}
