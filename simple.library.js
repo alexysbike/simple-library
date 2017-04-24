@@ -10,6 +10,7 @@
         .module('SimpleLibrary', [])
         .component('simpleLoading', simpleLoading())
         .factory('SimpleLoadingService', [simpleLoadingService])
+        .factory('SimplePrompt', simplePrompt)
         .filter('simpleToArray', toArrayFilter);
     
     function toArrayFilter(){
@@ -74,6 +75,49 @@
 
         function desactivate(){
             this.loading.active = false;
+        }
+    }
+
+    function simplePrompt(){
+
+        var methods = {
+            _alert: _alert,
+            _confirm: _confirm
+        }
+
+        return {
+            alert: triggerAlert,
+            confirm: triggerConfirm,
+            setAlert: setAlert,
+            setConfirm: setConfirm
+        }
+
+        function triggerAlert(message, title){
+            title = (title) ? title : "Alert";
+            return methods._alert(message, title);
+        }
+
+        function triggerConfirm(message, title){
+            title = (title) ? title : "Confirm";
+            return methods._confirm(message, title);
+        }
+
+        function setAlert(newAlert){
+            methods._alert = newAlert;
+            return true;
+        }
+
+        function setConfirm(newConfirm){
+            methods._confirm = newConfirm;
+            return true;
+        }
+
+        function _alert(message){
+            return Promise.resolve(alert(message));
+        }
+
+        function _confirm(message){
+            return Promise.resolve(confirm(message));
         }
     }
 }());
