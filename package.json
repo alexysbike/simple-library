@@ -1,6 +1,6 @@
 {
   "name": "simple-library",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Simple Library by DK is for Angularjs. Collection of simple things to use.",
   "main": "index.js",
   "scripts": {
