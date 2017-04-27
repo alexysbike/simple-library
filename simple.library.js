@@ -11,7 +11,19 @@
         .component('simpleLoading', simpleLoading())
         .factory('SimpleLoadingService', [simpleLoadingService])
         .factory('SimplePrompt', simplePrompt)
-        .filter('simpleToArray', toArrayFilter);
+        .filter('simpleToArray', toArrayFilter)
+        .directive('scrollToTop', scrollToTop);
+
+    function scrollToTop(){
+        return {
+            restrict: 'A',
+            link: function postLink(scope, elem, attrs) {
+                scope.$watch(attrs.scrollToTop, function() {
+                    elem[0].scrollTop = 0;
+                });
+            }
+        };
+    };
     
     function toArrayFilter(){
         return function (obj, addKey) {
